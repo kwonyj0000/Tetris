@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테트리스 게임</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="back-link">
+        <a href="index.html">← 메인으로 돌아가기</a>
+    </div>
+    <div class="game-container">
+        <div class="game-area">
+            <h1>🎮 테트리스</h1>
+            <div style="position: relative;">
+                <canvas id="gameCanvas" width="300" height="600"></canvas>
+                <div class="game-over" id="gameOver">
+                    <h2>게임 오버!</h2>
+                    <p id="finalScore"></p>
+                </div>
+            </div>
+            <button class="restart-btn" onclick="restartGame()">새 게임</button>
+            <button class="sound-btn" onclick="toggleSound()" id="soundBtn">🔊 음악 ON</button>
+        </div>
+
+        <div class="side-panel">
+            <div class="info-box">
+                <h2>점수</h2>
+                <div class="score-display" id="score">0</div>
+            </div>
+
+            <div class="info-box">
+                <h2>레벨</h2>
+                <div class="level-display" id="level">1</div>
+            </div>
+
+            <div class="info-box">
+                <h2>다음 블록</h2>
+                <canvas id="nextPieceCanvas" class="next-piece-canvas" width="120" height="120"></canvas>
+            </div>
+
+            <div class="controls">
+                <h3>조작법</h3>
+                <div><span>이동</span><kbd>← →</kbd></div>
+                <div><span>회전</span><kbd>↑</kbd></div>
+                <div><span>빠른 낙하</span><kbd>↓</kbd></div>
+                <div><span>즉시 낙하</span><kbd>Space</kbd></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
